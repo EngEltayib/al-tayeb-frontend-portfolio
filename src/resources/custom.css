@@ -67,3 +67,18 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+.language-toggle {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: .65rem;
+  color: var(--neutral-on-background-strong);
+  background: transparent;
+  cursor: pointer;
+  font: 700 .8rem/1 Arial, sans-serif;
+}
+
+.language-toggle:hover { background: var(--neutral-alpha-weak); }
+html[dir="rtl"] body { font-family: Tahoma, Arial, sans-serif; }
+html[dir="rtl"] .portfolio-copy { text-align: right; }

@@ -15,6 +15,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { LocalizedText } from "@/components/LocalizedText";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -76,29 +77,43 @@ export default function Home() {
             </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
+            <Row gap="12" wrap horizontal="center">
+              <Button id="work" data-border="rounded" href="/work" variant="primary" size="m" weight="default" arrowIcon>
+                <LocalizedText en="View my work" ar="شاهد أعمالي" />
+              </Button>
+              <Button href={`mailto:${person.email}`} variant="secondary" size="m" prefixIcon="email">
+                <LocalizedText en="Contact me" ar="تواصل معي" />
+              </Button>
+              <Button href={about.path} variant="tertiary" size="m">
+                <LocalizedText en="About me" ar="اعرف عني" />
+              </Button>
+            </Row>
           </RevealFx>
         </Column>
+      </Column>
+      <Column fillWidth gap="24" paddingX="l">
+        <Heading as="h2" variant="display-strong-xs">
+          <LocalizedText en="What I bring to a product team" ar="ما أقدمه لفريق المنتج" />
+        </Heading>
+        <Row fillWidth gap="16" s={{ direction: "column" }}>
+          <Column flex={1} border="neutral-alpha-weak" radius="l" padding="24" gap="8">
+            <Text variant="heading-strong-m">React · Next.js · TypeScript</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s"><LocalizedText en="Production experience building and maintaining real product features." ar="خبرة إنتاجية في بناء وتطوير خصائص حقيقية داخل المنتجات." /></Text>
+          </Column>
+          <Column flex={1} border="neutral-alpha-weak" radius="l" padding="24" gap="8">
+            <Text variant="heading-strong-m">SaaS · APIs · RBAC</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s"><LocalizedText en="Complex dashboards, authentication, payments, permissions, and server-driven workflows." ar="لوحات تحكم معقدة ومصادقة ومدفوعات وصلاحيات وتدفقات معتمدة على الخادم." /></Text>
+          </Column>
+          <Column flex={1} border="neutral-alpha-weak" radius="l" padding="24" gap="8">
+            <Text variant="heading-strong-m">Product collaboration</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s"><LocalizedText en="Comfortable translating backend contracts and evolving product needs into maintainable UI." ar="أحوّل عقود Backend ومتطلبات المنتج المتغيرة إلى واجهات واضحة وقابلة للصيانة." /></Text>
+          </Column>
+        </Row>
+        <Row wrap gap="8">
+          {['React.js', 'Next.js', 'TypeScript', 'Material UI', 'React Hook Form', 'Yup', 'REST APIs', 'next-intl', 'Git'].map((skill) => (
+            <Badge key={skill} background="neutral-alpha-weak" onBackground="neutral-strong">{skill}</Badge>
+          ))}
+        </Row>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />

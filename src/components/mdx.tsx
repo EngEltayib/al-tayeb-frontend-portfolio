@@ -26,6 +26,7 @@ import {
   ListItem,
   Line,
 } from "@once-ui-system/core";
+import { LocaleSection, LocalizedText } from "@/components/LocalizedText";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -202,6 +203,8 @@ const components = {
   Icon,
   Media,
   SmartLink,
+  LocaleSection,
+  LocalizedText,
 };
 
 type CustomMDXProps = MDXRemoteProps & {

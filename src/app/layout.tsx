@@ -53,6 +53,10 @@ export default async function RootLayout({
                 try {
                   const root = document.documentElement;
                   const defaultTheme = 'system';
+                  const locale = localStorage.getItem('portfolio-locale') || 'en';
+                  root.dataset.locale = locale;
+                  root.lang = locale;
+                  root.dir = locale === 'ar' ? 'rtl' : 'ltr';
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({

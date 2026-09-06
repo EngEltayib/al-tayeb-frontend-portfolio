@@ -1,6 +1,7 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
+import { LocalizedText } from "@/components/LocalizedText";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -29,7 +30,7 @@ export default function Work() {
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
+        <LocalizedText en={work.title} ar="أعمال مختارة — الطيب خالد سيد" />
       </Heading>
       <Projects />
     </Column>

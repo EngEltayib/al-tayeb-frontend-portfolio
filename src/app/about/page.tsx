@@ -16,6 +16,7 @@ import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { LocalizedText } from "@/components/LocalizedText";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -96,7 +97,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              <LocalizedText en="Cairo, Egypt" ar="القاهرة، مصر" />
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">
@@ -133,7 +134,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8"><LocalizedText en="Contact me" ar="تواصل معي" /></Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -150,7 +151,7 @@ export default function About() {
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              {person.role}
+              <LocalizedText en={person.role} ar="مطور واجهات أمامية" />
             </Text>
             {social.length > 0 && (
               <Row
@@ -205,7 +206,7 @@ export default function About() {
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+                <LocalizedText en={about.work.title} ar="الخبرة العملية" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.work.experiences.map((experience, index) => (
@@ -264,7 +265,7 @@ export default function About() {
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
+                <LocalizedText en={about.studies.title} ar="التعليم والتدريب" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
@@ -289,7 +290,7 @@ export default function About() {
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                <LocalizedText en={about.technical.title} ar="المهارات التقنية" />
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (

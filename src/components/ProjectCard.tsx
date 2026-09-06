@@ -9,6 +9,8 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { LocalizedText, useLocale } from "./LocalizedText";
+import { projectTranslations } from "@/resources/projectTranslations";
 
 interface ProjectCardProps {
   href: string;
@@ -30,13 +32,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
 }) => {
+  const locale = useLocale();
+  const localizedProject = locale === "ar" ? projectTranslations[title] : undefined;
+  const displayTitle = localizedProject?.title ?? title;
+  const displayDescription = localizedProject?.description ?? description;
+
   return (
     <Column fillWidth gap="m">
       <Carousel
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
           slide: image,
-          alt: title,
+          alt: displayTitle,
         }))}
       />
       <Flex
@@ -50,7 +57,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         {title && (
           <Flex flex={5}>
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
+              {displayTitle}
             </Heading>
           </Flex>
         )}
@@ -59,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
               <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
+                {displayDescription}
               </Text>
             )}
             <Flex gap="24" wrap>
@@ -69,7 +76,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s"><LocalizedText en="Read case study" ar="اقرأ دراسة الحالة" /></Text>
                 </SmartLink>
               )}
               {link && (
@@ -78,7 +85,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={link}
                 >
-                  <Text variant="body-default-s">View project</Text>
+                  <Text variant="body-default-s"><LocalizedText en="View project" ar="شاهد المشروع" /></Text>
                 </SmartLink>
               )}
             </Flex>

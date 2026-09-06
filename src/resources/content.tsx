@@ -1,20 +1,21 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
+import { LocalizedText } from "@/components/LocalizedText";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Al-Tayeb",
+  lastName: "Khaled Sayed",
+  name: "Al-Tayeb Khaled Sayed",
+  role: "Frontend Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "altayeb.kha@gmail.com",
+  location: "Africa/Cairo",
+  languages: ["Arabic — Native", "English — Professional"],
   locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -26,25 +27,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/EngEltayib",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://linkedin.com/in/altayeb-khaled",
     essential: true,
   },
   {
@@ -59,26 +48,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} — Frontend Developer`,
+  description: "Frontend Developer building production web applications with React.js, Next.js, and TypeScript, with experience in SaaS dashboards, authentication, payments, APIs, and bilingual interfaces.",
+  headline: <LocalizedText en={<>Frontend Developer building reliable interfaces for real products.</>} ar={<>مطور واجهات أمامية أبني واجهات موثوقة لمنتجات حقيقية.</>} />,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4"><LocalizedText en="Available" ar="متاح للعمل" /></strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          <LocalizedText en="Full-time · Part-time · Freelance · Remote" ar="دوام كامل · جزئي · عمل حر · عن بُعد" />
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "mailto:altayeb.kha@gmail.com",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      <LocalizedText
+        en={<>I work with <Text as="span" size="xl" weight="strong">React.js, Next.js, and TypeScript</Text> to build SaaS dashboards, authentication flows, payment experiences, bilingual interfaces, and business-driven frontend workflows.</>}
+        ar={<>أعمل باستخدام <Text as="span" size="xl" weight="strong">React.js وNext.js وTypeScript</Text> لبناء لوحات تحكم SaaS، أنظمة المصادقة والصلاحيات، تدفقات الدفع، الواجهات ثنائية اللغة، وتجارب Frontend مرتبطة باحتياجات العمل الفعلية.</>}
+      />
     </>
   ),
 };
@@ -86,8 +77,8 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `About — ${person.name}`,
+  description: `Meet ${person.name}, a frontend developer based in Cairo, Egypt.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -97,16 +88,17 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "mailto:altayeb.kha@gmail.com",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        <LocalizedText
+          en={<>Frontend Developer with 1.5+ years of hands-on experience building production SaaS applications using React.js, Next.js, and TypeScript. Experienced in REST API integration, multi-role dashboards, authentication and RBAC, payment flows, bilingual interfaces, and business-driven workflows.</>}
+          ar={<>مطور واجهات أمامية بخبرة عملية تزيد عن عام ونصف في بناء تطبيقات SaaS حقيقية باستخدام React.js وNext.js وTypeScript، مع خبرة في تكامل REST APIs، لوحات التحكم متعددة الصلاحيات، المصادقة وRBAC، عمليات الدفع، الواجهات ثنائية اللغة، وتدفقات العمل المرتبطة باحتياجات المنتج.</>}
+        />
       </>
     ),
   },
@@ -115,42 +107,26 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Saudi Car Auctions Platform",
+        timeframe: "May 2026 — Present",
+        role: "Frontend Developer · Remote · Confidential startup",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          <LocalizedText key="auction-1" en="Built and maintained frontend features across customer-facing and dashboard workflows using Next.js, React, TypeScript, and Material UI." ar="بنيت وطورت خصائص Frontend لواجهات العملاء ولوحات التحكم باستخدام Next.js وReact وTypeScript وMaterial UI." />,
+          <LocalizedText key="auction-2" en="Implemented complex workflows for car listing, inspection, payments, auctions, user actions, and multi-step forms." ar="نفذت تدفقات عمل معقدة لإدراج السيارات والفحص والمدفوعات والمزادات وإجراءات المستخدم والنماذج متعددة الخطوات." />,
+          <LocalizedText key="auction-3" en="Integrated REST APIs and handled server-driven data, validation, filtering, status-based interfaces, and bilingual AR/EN requirements." ar="ربطت REST APIs وتعاملت مع البيانات القادمة من الخادم والتحقق والتصفية والواجهات المعتمدة على الحالات ومتطلبات العربية والإنجليزية." />,
+          <LocalizedText key="auction-4" en="Worked directly with backend and product stakeholders and supported frontend deployment across local, testing, and production environments." ar="عملت مباشرة مع فرق Backend والمنتج، وساهمت في نشر الواجهة وحل الاختلافات بين بيئات Local وTesting وProduction." />,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "AlexApps",
+        timeframe: "May 2025 — Present",
+        role: "Frontend Developer · Full-time Remote",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <LocalizedText key="alex-1" en="Built React.js and Next.js SaaS dashboards across service management, offers, and restaurant platforms, integrating REST APIs and business workflows." ar="بنيت لوحات تحكم SaaS باستخدام React.js وNext.js لمنصات إدارة الخدمات والعروض والمطاعم، مع ربط REST APIs وتدفقات العمل." />,
+          <LocalizedText key="alex-2" en="Implemented OTP authentication, protected routes, RBAC, permission-based navigation, and user actions for multi-role applications." ar="نفذت المصادقة باستخدام OTP والمسارات المحمية وRBAC والتنقل والإجراءات المبنية على صلاحيات المستخدم." />,
+          <LocalizedText key="alex-3" en="Integrated Tap Payments and delivered validated multi-step onboarding and registration workflows." ar="ربطت Tap Payments ونفذت تدفقات تسجيل وتهيئة مستخدم متعددة الخطوات مع التحقق وإدارة الحالة." />,
+          <LocalizedText key="alex-4" en="Developed server-side filtering, pagination, debounced search, bilingual AR/EN interfaces, and approval workflows." ar="طورت التصفية من جهة الخادم وتقسيم الصفحات والبحث المؤجل وواجهات عربية وإنجليزية وتدفقات الموافقة." />,
         ],
         images: [],
       },
@@ -161,12 +137,24 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Minya University — Faculty of Computers and Informatics",
+        description: <LocalizedText en="Bachelor’s degree in Computer Science · Oct 2020 — Jul 2024 · Minya, Egypt." ar="بكالوريوس علوم الحاسب · أكتوبر 2020 — يوليو 2024 · المنيا، مصر." />,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Graduation Project — Used Books Marketplace",
+        description: <LocalizedText en="Full-stack marketplace for reselling used books with AI-powered quality assessment · Awarded A+." ar="منصة Full-stack لإعادة بيع الكتب المستعملة مع تقييم الجودة بالذكاء الاصطناعي · التقدير A+." />,
+      },
+      {
+        name: "Information Technology Institute (ITI) — ICC Full-Stack",
+        description: <LocalizedText en="Intensive Full-Stack training · Nov 2024 — Apr 2025." ar="تدريب مكثف في مسار Full-Stack · نوفمبر 2024 — أبريل 2025." />,
+      },
+      {
+        name: "Digital Egypt Pioneers Initiative (MCIT) — Full-Stack",
+        description: <LocalizedText en="Full-Stack development track · May 2024 — Oct 2024." ar="مسار تطوير Full-Stack · مايو 2024 — أكتوبر 2024." />,
+      },
+      {
+        name: "Microsoft Azure Fundamentals",
+        description: <>AZ-900 · Completed.</>,
       },
     ],
   },
@@ -175,60 +163,58 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend Core",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>React.js, Next.js App Router, TypeScript, JavaScript ES6+, HTML5 and CSS3.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "React",
+            icon: "react",
           },
         ],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "State, Forms & Data",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Context API, React Hook Form, Yup, Axios and RESTful APIs.</>
         ),
         tags: [
           {
-            name: "JavaScript",
+            name: "REST APIs",
             icon: "javascript",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "React Hook Form",
+            icon: "react",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+        images: [],
+      },
+      {
+        title: "Rendering & Application Engineering",
+        description: <>Server Components, SSR, CSR, authentication, RBAC and business-driven workflows.</>,
+        tags: [{ name: "Next.js", icon: "nextjs" }],
+        images: [],
+      },
+      {
+        title: "UI & Internationalization",
+        description: <>Material UI, Bootstrap, Responsive Design, next-intl and RTL/LTR support.</>,
+        tags: [{ name: "Material UI" }, { name: "next-intl" }],
+        images: [],
+      },
+      {
+        title: "Tooling & Workflow",
+        description: <>Git, GitHub, Figma, Jira, Agile and Postman.</>,
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Git & GitHub",
+            icon: "github",
           },
         ],
+        images: [],
       },
     ],
   },
@@ -237,7 +223,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Frontend notes and case studies",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -246,8 +232,8 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `Selected Work — ${person.name}`,
+  description: `Frontend and SaaS projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

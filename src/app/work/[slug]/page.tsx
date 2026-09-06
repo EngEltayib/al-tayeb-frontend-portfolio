@@ -17,9 +17,10 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
-import { ScrollToHash, CustomMDX } from "@/components";
+import { ScrollToHash, CustomMDX, LocalizedText } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
+import { projectTranslations } from "@/resources/projectTranslations";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -72,6 +73,7 @@ export default async function Project({
     post.metadata.team?.map((person) => ({
       src: person.avatar,
     })) || [];
+  const arabicProject = projectTranslations[post.metadata.title];
 
   return (
     <Column as="section" maxWidth="m" horizontal="center" gap="l">
@@ -94,12 +96,14 @@ export default async function Project({
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
         <SmartLink href="/work">
-          <Text variant="label-strong-m">Projects</Text>
+          <Text variant="label-strong-m"><LocalizedText en="Projects" ar="المشاريع" /></Text>
         </SmartLink>
         <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
           {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
         </Text>
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        <Heading variant="display-strong-m">
+          <LocalizedText en={post.metadata.title} ar={arabicProject?.title ?? post.metadata.title} />
+        </Heading>
       </Column>
       <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">
@@ -127,7 +131,7 @@ export default async function Project({
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
+          <LocalizedText en="Related projects" ar="مشاريع أخرى" />
         </Heading>
         <Projects exclude={[post.slug]} range={[2]} />
       </Column>
