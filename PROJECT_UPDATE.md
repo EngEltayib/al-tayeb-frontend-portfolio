@@ -149,8 +149,7 @@ CTA للتواصل:
 ## 7. الملفات والصور
 
 - الصورة الشخصية: `TODO — استبدال صورة القالب بصورة Professional Headshot نهائية`
-- ملف الـCV النهائي: `Al-Tayeb-Sayed-CV.pdf`  
-  `TODO — إضافة النسخة النهائية بعد تحديث خبرة الشركة الثانية`
+- ملف الـCV النهائي: `public/Al-Tayeb-Sayed-CV.pdf` — تمت إضافته وربطه بالمعاينة وزر التحميل.
 - Download CV button: `Yes`
 - Logo شخصي: `لا يوجد حاليًا`
 - Monogram: `No — غير ضروري`
@@ -682,6 +681,32 @@ Availability:
 
 ## Completed in this phase
 
+- Finalized the homepage flow as `Hero + CV → Experience → Testimonials → Contact → Footer`.
+- Removed project listings and all intermediate content from the homepage while keeping the Work page and its navigation available.
+- Added a bilingual final contact CTA with Email and LinkedIn actions.
+- Added a bilingual `What people say about me` testimonials carousel after the projects.
+- Added concise, human-toned recommendations from Hassan Basheer and Mohamed Helmy with their LinkedIn profiles.
+- Added a clearly labeled placeholder slide for Khaled Elnaghi until the real recommendation screenshot is supplied.
+- Added automatic rotation, manual arrows, slide dots, and reduced-motion support.
+- Strengthened the Experience section hierarchy: `Experience` is now the large visual headline, followed by a premium product-engineering statement and a larger 1.5+ years summary.
+- Added the official AlexApps website link and made both company links visible as `Visit website` actions beside the company names.
+- Replaced the confidential startup label with the approved company name `AutoZad`, added the supplied AutoZad SVG logo, and linked it to `https://staging.almuthana.co/ar`.
+- Clarified that the AutoZad and AlexApps roles are concurrent.
+- Strengthened AutoZad experience copy around participation in business discussions, product decisions, and workflow details.
+- Strengthened AlexApps experience copy around teamwork, feature ownership, and solving client problems closely from clarification through delivery.
+- Added a dedicated responsive Experience section directly after the hero, using a calm timeline/card layout with bilingual content.
+- Added the supplied AlexApps logo at `public/images/companies/alexapps.webp`.
+- Kept the Saudi startup identity confidential and used a neutral fallback mark until public logo/name permission is confirmed.
+- Reduced repetition by focusing Saudi experience on auctions, inspection, changing requirements, and deployment; AlexApps focuses on SaaS dashboards, RBAC, Tap Payments, and data-heavy bilingual flows.
+- Expanded the homepage container, removed duplicate horizontal padding from the hero, and added fluid spacing and responsive width limits for desktop, tablet, and mobile screens.
+- Rebuilt the homepage first viewport as a two-column hero: identity and actions on one side, visible CV preview and download action on the other.
+- Added the current CV as `public/Al-Tayeb-Sayed-CV.pdf`; it remains temporary until the updated final CV is supplied.
+- Removed the `What I bring to a product team` section from the homepage.
+- Kept the first viewport focused on the approved heading, hook, actions, and CV only; project content starts below the fold.
+- The split layout follows the active LTR/RTL document direction and stacks cleanly on small screens.
+- Updated the homepage identity heading to show the name followed by `Frontend Engineer | React.js & Next.js & TypeScript`.
+- Replaced the long technical hero introduction with a concise value statement focused on turning complex requirements into fast, reliable, maintainable interfaces.
+
 - Verified that the current upstream Magic Portfolio license is CC BY-NC 4.0 with attribution required and commercial use prohibited.
 - Updated the homepage headline and introduction using the approved English and Arabic copy.
 - Added the approved availability statement for full-time, part-time, freelance, and remote opportunities.
@@ -713,9 +738,9 @@ Availability:
 
 ## Still blocked by missing input or assets
 
-- Professional profile photo.
+- Professional profile photo: completed using `public/images/avatar.png`.
 - Real and approved screenshots for the Saudi Car Auctions and AlexApps work.
 - Used Books Marketplace screenshots, exact stack, challenge, solution, and repository URL.
-- Updated final CV PDF.
+- Updated final CV PDF: completed and available at `public/Al-Tayeb-Sayed-CV.pdf`.
 - Final domain.
 - A commercial/extended template license or a decision to migrate away from the CC BY-NC template before public job-search use.

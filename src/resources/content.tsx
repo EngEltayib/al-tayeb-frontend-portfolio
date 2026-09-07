@@ -6,8 +6,8 @@ const person: Person = {
   firstName: "Al-Tayeb",
   lastName: "Khaled Sayed",
   name: "Al-Tayeb Khaled Sayed",
-  role: "Frontend Developer",
-  avatar: "/images/avatar.jpg",
+  role: "Frontend Engineer",
+  avatar: "/images/avatar.png",
   email: "altayeb.kha@gmail.com",
   location: "Africa/Cairo",
   languages: ["Arabic — Native", "English — Professional"],
@@ -48,9 +48,14 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} — Frontend Developer`,
+  title: `${person.name} | Frontend Engineer`,
   description: "Frontend Developer building production web applications with React.js, Next.js, and TypeScript, with experience in SaaS dashboards, authentication, payments, APIs, and bilingual interfaces.",
-  headline: <LocalizedText en={<>Frontend Developer building reliable interfaces for real products.</>} ar={<>مطور واجهات أمامية أبني واجهات موثوقة لمنتجات حقيقية.</>} />,
+  headline: (
+    <LocalizedText
+      en={<>Al-Tayeb Khaled Sayed<br /><Text as="span" variant="heading-default-xl" onBackground="brand-weak">Frontend Engineer | React.js &amp; Next.js &amp; TypeScript</Text></>}
+      ar={<>الطيب خالد سيد<br /><Text as="span" variant="heading-default-xl" onBackground="brand-weak">Frontend Engineer | React.js &amp; Next.js &amp; TypeScript</Text></>}
+    />
+  ),
   featured: {
     display: true,
     title: (
@@ -67,8 +72,8 @@ const home: Home = {
   subline: (
     <>
       <LocalizedText
-        en={<>I work with <Text as="span" size="xl" weight="strong">React.js, Next.js, and TypeScript</Text> to build SaaS dashboards, authentication flows, payment experiences, bilingual interfaces, and business-driven frontend workflows.</>}
-        ar={<>أعمل باستخدام <Text as="span" size="xl" weight="strong">React.js وNext.js وTypeScript</Text> لبناء لوحات تحكم SaaS، أنظمة المصادقة والصلاحيات، تدفقات الدفع، الواجهات ثنائية اللغة، وتجارب Frontend مرتبطة باحتياجات العمل الفعلية.</>}
+        en={<>I turn complex product requirements into <Text as="span" size="xl" weight="strong">fast, reliable interfaces</Text> that feel clear to users and stay maintainable for teams.</>}
+        ar={<>أحوّل متطلبات المنتجات المعقدة إلى <Text as="span" size="xl" weight="strong">واجهات سريعة وموثوقة</Text>، واضحة للمستخدم وقابلة للتطوير مع الفريق.</>}
       />
     </>
   ),
@@ -107,14 +112,15 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Saudi Car Auctions Platform",
+        company: "AutoZad",
         timeframe: "May 2026 — Present",
-        role: "Frontend Developer · Remote · Confidential startup",
+        role: "Frontend Developer · Remote · Concurrent role",
         achievements: [
           <LocalizedText key="auction-1" en="Built and maintained frontend features across customer-facing and dashboard workflows using Next.js, React, TypeScript, and Material UI." ar="بنيت وطورت خصائص Frontend لواجهات العملاء ولوحات التحكم باستخدام Next.js وReact وTypeScript وMaterial UI." />,
           <LocalizedText key="auction-2" en="Implemented complex workflows for car listing, inspection, payments, auctions, user actions, and multi-step forms." ar="نفذت تدفقات عمل معقدة لإدراج السيارات والفحص والمدفوعات والمزادات وإجراءات المستخدم والنماذج متعددة الخطوات." />,
           <LocalizedText key="auction-3" en="Integrated REST APIs and handled server-driven data, validation, filtering, status-based interfaces, and bilingual AR/EN requirements." ar="ربطت REST APIs وتعاملت مع البيانات القادمة من الخادم والتحقق والتصفية والواجهات المعتمدة على الحالات ومتطلبات العربية والإنجليزية." />,
-          <LocalizedText key="auction-4" en="Worked directly with backend and product stakeholders and supported frontend deployment across local, testing, and production environments." ar="عملت مباشرة مع فرق Backend والمنتج، وساهمت في نشر الواجهة وحل الاختلافات بين بيئات Local وTesting وProduction." />,
+          <LocalizedText key="auction-4" en="Contributed to business discussions and product decisions, helping shape workflow details beyond frontend implementation." ar="شاركت في مناقشات الـBusiness وقرارات المنتج وساهمت في تشكيل تفاصيل تدفقات العمل بجانب التنفيذ التقني." />,
+          <LocalizedText key="auction-5" en="Worked directly with backend and product stakeholders and supported frontend deployment across local, testing, and production environments." ar="عملت مباشرة مع فرق Backend والمنتج، وساهمت في نشر الواجهة وحل الاختلافات بين بيئات Local وTesting وProduction." />,
         ],
         images: [],
       },
@@ -124,6 +130,7 @@ const about: About = {
         role: "Frontend Developer · Full-time Remote",
         achievements: [
           <LocalizedText key="alex-1" en="Built React.js and Next.js SaaS dashboards across service management, offers, and restaurant platforms, integrating REST APIs and business workflows." ar="بنيت لوحات تحكم SaaS باستخدام React.js وNext.js لمنصات إدارة الخدمات والعروض والمطاعم، مع ربط REST APIs وتدفقات العمل." />,
+          <LocalizedText key="alex-team" en="Worked within product teams, took ownership of assigned features, and solved client problems closely from requirement clarification through delivery." ar="عملت داخل فرق المنتج، وتحملت مسؤولية الخصائص المسندة إليّ، وحللت مشاكل العملاء عن قرب من توضيح المتطلبات وحتى التسليم." />,
           <LocalizedText key="alex-2" en="Implemented OTP authentication, protected routes, RBAC, permission-based navigation, and user actions for multi-role applications." ar="نفذت المصادقة باستخدام OTP والمسارات المحمية وRBAC والتنقل والإجراءات المبنية على صلاحيات المستخدم." />,
           <LocalizedText key="alex-3" en="Integrated Tap Payments and delivered validated multi-step onboarding and registration workflows." ar="ربطت Tap Payments ونفذت تدفقات تسجيل وتهيئة مستخدم متعددة الخطوات مع التحقق وإدارة الحالة." />,
           <LocalizedText key="alex-4" en="Developed server-side filtering, pagination, debounced search, bilingual AR/EN interfaces, and approval workflows." ar="طورت التصفية من جهة الخادم وتقسيم الصفحات والبحث المؤجل وواجهات عربية وإنجليزية وتدفقات الموافقة." />,

@@ -1,6 +1,6 @@
 export const projectTranslations: Record<string, { title: string; description: string }> = {
-  "Saudi Car Auctions Platform": {
-    title: "منصة مزادات سيارات سعودية",
+  "AutoZad — Saudi Car Auctions Platform": {
+    title: "AutoZad — منصة مزادات سيارات سعودية",
     description: "منصة تشمل إدراج السيارات، الفحص، تجهيز المزادات، إجراءات العملاء، وعمليات لوحة التحكم.",
   },
   "Multi-role SaaS Dashboard": {

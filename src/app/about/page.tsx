@@ -151,7 +151,7 @@ export default function About() {
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              <LocalizedText en={person.role} ar="مطور واجهات أمامية" />
+              <LocalizedText en={person.role} ar="مهندس واجهات أمامية" />
             </Text>
             {social.length > 0 && (
               <Row
