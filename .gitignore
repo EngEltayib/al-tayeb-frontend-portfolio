@@ -9,6 +9,14 @@
 # testing
 /coverage
 
+# local reports, handoff notes, and generated artifacts
+/PROJECT_UPDATE.md
+/tmp/
+/output/
+/*-report.html
+/*-report.md
+/notes/
+
 # next.js
 /.next/
 /out/
@@ -18,7 +26,10 @@
 
 # misc
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.pem
+*.log
 
 # debug
 npm-debug.log*
@@ -26,6 +37,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -34,3 +46,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor and local tooling
+.idea/
+*.swp
+*.swo
