@@ -1,93 +1,76 @@
-# Magic Portfolio
+# Al-Tayeb Khaled Sayed — Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+Personal portfolio for **Al-Tayeb Khaled Sayed**, a Frontend Engineer focused on building production web applications with React.js, Next.js, and TypeScript.
 
-View the demo [here](https://demo.magic-portfolio.com).
+The portfolio presents professional experience, bilingual case studies, colleague recommendations, a downloadable CV, and direct contact links.
 
-![Magic Portfolio](public/images/og/home.jpg)
+Live site: [al-tayeb-frontend-portfolio.vercel.app](https://al-tayeb-frontend-portfolio.vercel.app/)
 
-Launch your portfolio on [Aveiro](https://www.aveiro.app/marketplace/spotlight), our managed publishing platform. Update case studies, blog posts and content through MCP from your favorite AI tools.
+## About me
 
-## Getting started
+I am a Frontend Engineer with hands-on experience building SaaS dashboards and business-critical workflows, including:
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+- React.js, Next.js App Router, and TypeScript applications.
+- REST API integration and backend-driven interfaces.
+- Authentication, OTP, RBAC, and permission-aware navigation.
+- Payments, multi-step onboarding, filtering, pagination, and search.
+- Arabic/English products with RTL/LTR support.
+- Close collaboration with product, backend, clients, and development teams.
 
-**2. Install dependencies**
-```
-npm install
-```
+## Portfolio sections
 
-**3. Run dev server**
-```
+- Hero and downloadable CV.
+- Professional experience at AutoZad and AlexApps.
+- Recommendations from people I have worked with.
+- Dedicated project case studies under the Work page.
+- Arabic and English interface with saved language preference.
+- Responsive dark/light design.
+
+## Tech stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Once UI
+- MDX
+- Sass
+
+## Local development
+
+Requirements: Node.js 20 or later and npm.
+
+```bash
+npm ci
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
-```
+Open `http://localhost:3000`.
 
-**5. Edit content**
-```
-src/resources/content.js
-```
+## Verification
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
+```bash
+npm run typecheck
+npm run build
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+The GitHub Actions workflow runs these checks for pushes to `main` and pull requests targeting `main`. Production deployment is handled by the repository's Vercel Git integration.
 
-## Documentation
+## Content and configuration
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+- Personal content: `src/resources/content.tsx`
+- Site configuration: `src/resources/once-ui.config.ts`
+- Homepage sections: `src/components/home/`
+- Project case studies: `src/app/work/projects/`
+- Public assets and CV: `public/`
 
-## Features
+## Contact
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+- Email: [altayeb.kha@gmail.com](mailto:altayeb.kha@gmail.com)
+- LinkedIn: [linkedin.com/in/altayeb-khaled](https://linkedin.com/in/altayeb-khaled)
+- GitHub: [github.com/EngEltayib](https://github.com/EngEltayib)
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+## Credits and license
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+This portfolio is customized from [Magic Portfolio](https://github.com/once-ui-system/magic-portfolio), built with [Once UI](https://once-ui.com).
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
-
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
-
-## Creators
-
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
-
-## Get involved
-
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
-
-## License
-
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-## Deploy with Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+The original template is distributed under the **CC BY-NC 4.0** license. Attribution is required and commercial use is restricted unless an appropriate extended license is obtained. See [LICENSE](LICENSE) for the license included in this repository.
